@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XYZ</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #a78bfa; }
+
+    /* Hero */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      letter-spacing: 10px;
+      background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      line-height: 1.8;
+      animation: fadeInUp 1.2s ease;
+    }
+    .hero .cta {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      animation: fadeInUp 1.4s ease;
+    }
+    .btn {
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #a78bfa, #60a5fa);
+      color: #fff;
+      border: none;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(167,139,250,0.4); }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 80px 60px;
+      background: rgba(255,255,255,0.02);
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(167,139,250,0.2);
+    }
+    .card .icon { font-size: 3rem; margin-bottom: 20px; }
+    .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #a78bfa; }
+    .card p { color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 60px 20px;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #a78bfa, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat p { color: rgba(255,255,255,0.6); margin-top: 6px; letter-spacing: 1px; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">XYZ</div>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>XYZ</h1>
+    <p>Welcome to XYZ — a modern, minimal, and powerful platform built for the future. Explore what we have to offer.</p>
+    <div class="cta">
+      <a href="#features" class="btn btn-primary">Get Started</a>
+      <a href="#stats" class="btn btn-secondary">Learn More</a>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Lightning Fast</h3>
+      <p>Optimized for speed and performance. Everything loads instantly so you never have to wait.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Beautiful Design</h3>
+      <p>Crafted with care and attention to detail. Every pixel is placed with purpose and elegance.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔒</div>
+      <h3>Secure & Reliable</h3>
+      <p>Built with security at its core. Your data and privacy are always protected with us.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>Global Reach</h3>
+      <p>Serving users across the globe with a resilient and scalable infrastructure.</p>
+    </div>
+  </section>
+
+  <section class="stats" id="stats">
+    <div class="stat">
+      <h2>10K+</h2>
+      <p>HAPPY USERS</p>
+    </div>
+    <div class="stat">
+      <h2>99.9%</h2>
+      <p>UPTIME</p>
+    </div>
+    <div class="stat">
+      <h2>50+</h2>
+      <p>COUNTRIES</p>
+    </div>
+    <div class="stat">
+      <h2>24/7</h2>
+      <p>SUPPORT</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>© 2026 XYZ. All rights reserved. | Built with ❤️ by Anjali</p>
+  </footer>
+
+</body>
+</html>
